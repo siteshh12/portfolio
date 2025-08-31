@@ -2,6 +2,10 @@ import streamlit as st
 
 st.set_page_config(page_title="Portfolio", layout="wide")
 
+# CSS inject karna
+with open("style.css") as f:
+    st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
+
 # Sidebar menu
 st.sidebar.title("Navigation")
 page = st.sidebar.radio("Go to", ["Home", "About", "Projects", "Skills", "Contact"])
